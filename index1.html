@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+// animation 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({left: '650px'});
+  });
+});
+//Hide and show the contents
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+});
+// Add & remove new HTML elements / contents
+$(document).ready(function(){
+  $("#btn2").click(function(){
+    $("ul").append("<li>Appended item</li>");
+  });
+  $("#btn3").click(function(){
+    $("#div1").remove();
+  });
+});
+// Apply multiple CSS properties using css() method 
+$(document).ready(function(){
+  $("#btn4").click(function(){
+    $("#p1").css({"background-color": "yellow", "font-size": "250%"});
+    $("#p2").css({"background-color": "yellow", "font-size": "200%"});
+    $("#p3").css({"background-color": "yellow", "font-size": "150%"});
+  });
+});
+// Incorporate jQuery dimension methods 
+$(document).ready(function(){
+  $("#btn5").click(function(){
+    var txt = "";
+    txt += "Width of div: " + $("#div2").width() + "</br>";
+    txt += "Height of div: " + $("#div2").height();
+    $("#div2").html(txt);
+  });
+});
+// Apply jQuery traversing methods 
+$(document).ready(function(){
+  $("#btn6").click(function(){
+    $("#div3").contents().filter("em").wrap("<b/>");
+  });
+});
+</script>
+<style>
+  #div2 {
+  height: 100px;
+  width: 300px;
+  padding: 10px;
+  margin-left: 490px;
+  border: 1px solid blue;
+  background-color: lightblue;
+}
+.button2 {
+  background-color: #4CAF50; /* Green */
+  border: 2px solid red;
+  border-radius: 4px;
+  color: white;
+  width: 45%;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button2:hover{
+  background-color: #ec5b2f;
+}
+
+</style>
+</head>
+<body style="background-color: beige;">
+    <h1 style="margin-left: 570px;">Question Number 3 {JQuery} </h1>
+    <fieldset style="background-color: white; width: 90% ; margin-top: 20px;margin-left: 60px; display: inline;padding-bottom: 40px; text-align: center;">
+        <legend style="text-align:center ; font-size: 25px;"><h2>Question -3</h2></legend>
+        <fieldset style="height:300px ">
+            <button class="button2">Start Animation</button>
+            <br>
+        <div style="background:#98bf21;height:200px;width:200px;position:absolute;"></div>
+        </fieldset>
+    <fieldset>
+<legend style="text-align:center ; font-size: 25px;"><h3>Hide And Show Elements</h3></legend>
+<p style="font-size: 40px;">The text here will be hidden.</p>
+<button class="button2" id="hide">Hide</button>
+<button class="button2" id="show">Show</button>
+    </fieldset>
+    <fieldset>
+<legend style="text-align:center ; font-size: 25px;"><h3>Append & Remove list items</h3></legend>
+<h5 style="font-size: 30px;">Adding and removing items from list<h5>
+<ul style="list-style-type: none;font-size: 28px;">
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3</li>
+  <p id="div1" >This text will be removed</p>
+  <p id="div1" >This text will be removed</p>
+  <p id="div1" >This text will be removed</p>
+</ul>
+<button class="button2" id="btn2">Append list items</button>
+<button class="button2" id="btn3">Remove div element</button>
+    </fieldset>
+    <fieldset>
+<legend style="text-align:center ; font-size: 25px;"><h3>CSS properties using css() method </h3></legend>
+
+<h4 id="p1" style="font-size: 28px;">It will transformed.</h4>
+<h4 id="p2" style="font-size: 28px;">It will transformed.</h4>
+<h4 id="p3" style="font-size: 28px;">It will transformed.</h4>
+
+<button class="button2" id="btn4">Set multiple styles for p</button>
+    </fieldset>
+<fieldset>
+<legend style="text-align:center ; font-size: 25px;"><h3>JQuery Dimension Methods </h3></legend>
+<div id="div2"></div>
+<br>
+<button class="button2" id="btn5">Display dimensions of div</button>
+</fieldset>
+<fieldset>
+<legend style="text-align:center ; font-size: 25px;"><h3>JQuery Traversing Methods </h3></legend>
+
+<div id="div3" style="font-size:20px ;"><em> World! What a beautiful day!. This text will Be Transformed . </em></div><br>
+<button class="button2" id="btn6">Find all text nodes in div and wrap them</button><br>
+</fieldset>
+</fieldset>
+</body>
+</html>
+
